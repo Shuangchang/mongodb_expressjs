@@ -1,0 +1,9 @@
+extends layout
+
+block content
+   ul
+   each data in datas
+      li 
+        a(href='/form/#{data.id}') #{data.raw_character_text} 
+    
+    a(href="../") back to search

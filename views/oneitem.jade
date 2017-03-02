@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h2 Result found
+    p. 
+        #{jsonObj.raw_character_text} says: #{jsonObj.normalized_text}
+    h4 comments: #{jsonObj.comment} 
+    div
+        form(method="post" action="/create/#{jsonObj.id}")
+            label(for="comment") Leave some comment?:
+            input(type="text", name="comment")
+            input(type="submit", value="Save")
+        
+    
+    a(href="../") back to search

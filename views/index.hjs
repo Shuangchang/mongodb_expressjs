@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fetch tweets data</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <h1>Search something</h1>
+    <form action="/" method="post">
+        <input placeholder="Enter a word" type="text" name="text"></input>
+    </form>
+    <p>result:</p>
+    <p>fromUser: {{data.get(0).fromUser}}<br>
+    text: {{data.text}}<br>
+    createdAt: {{data.createdAt}}</p>
+    
+    <div id='data'></div>
+    <script>alert({{data.length}})
+        var template = Hogan.compile("{{#data}}text results are {{text}}<br/>{{/data}}");
+        var output = template.render(data);
+        jQuery('#data').html(output);
+        
+        
+    </script>
+  </body>
+</html>
